@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.6
+    container_name: docker-mysql
+    environment:
+      MYSQL_DATABASE: web_service
+      MYSQL_USER: root
+      MYSQL_PASSWORD: helixandre
+      MYSQL_ROOT_PASSWORD: helixandre
+    ports:
+      - "3000:3306"
+    restart: always
+    
+  web:
+    image: php:7.3-apache
+    container_name: docker-php
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    links:
+      - mysql

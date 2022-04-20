@@ -5,7 +5,7 @@
 		private $hostBd = 'localhost';
 		private $nombreBd = 'web_service';
 		private $usuarioBd = 'root';
-		private $passwordBd = '';
+		private $passwordBd = 'helixandre';
 		
 		public function __construct()
 		{
